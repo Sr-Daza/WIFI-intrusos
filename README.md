@@ -24,13 +24,21 @@ python 2.7
 Modulos python:
 
 import sys
+
 import time
+
 import pexpect
+
 import os
+
 import datetime
+
 import locale
+
 import logging
+
 import logging.handlers
+
 
 Instalar Telegram-cli (linux) y verificar que funcione.
 
@@ -41,36 +49,47 @@ Agregar lineas al crontab (para efectos de que funcione todo el tiempo)
 Conocer la ip de tu modem
 
 
+
 Uso:
 
 1.- Dar permisos de ejecutable al archivo intrusosWIFI.py
 
 
+
 2.- En el archivo intrusosWIFI.py cambiar 
 
 LINEA 18 
+
 ruta="/poner/ruta/a/folder/TXT"
 
 LINEA 19
+
 rutat="/ruta/Donde/instalas/o/ejecutas/telegram-cli/tg/bin"
 
 Cambiar USER en lineas 94 y 96, por el alias de un contacto que ya tengas de TELEGRAM al que le llagaran las alertas (puedes ser tu mismo)
 
 
+
 3.- Poner MACs de dispositivos conocidos en el archivo devices.txt copiando y pegando la salida del siguiente comando mientras tus dispositivos estan canectados(posteriormente se pueden agragar mas):
+
 
 sudo nmap -sP ip.de.tu.modem/24 | grep MAC
 
 
+
 4.- Editar el cron del root con el siguiente comando (yo uso nano como editor):
 
+
 sudo crontab -e
+
 
 y pegar la siguiente linea al final(modifica la ruta):
 
 */10 * * * * nmap -n -sP -PA -PU ip.de.tu.modem/24|grep MAC > /ruta/donde/esta/archivo/TXT/temp.txt 2>&1
 
+
 (este es el comando de nmap que me resulto mas util)
+
 
 
 5.- Editar el cron del usuario con el siguiente comando (puede ser tambien el del root con sudo):
@@ -89,6 +108,7 @@ Solo poner atención a las rutas pues el script, el crontab y Telegram-cli busca
 Con esto en los archivos cron se logra un escaneo de red cada 10 min , lo cual se puede midicar segun sus necesidades
 
 
+
 NOTAS:
 
 
@@ -97,6 +117,7 @@ NOTAS:
 
 
 * Nota telegram-cli: 
+
 
 Si les presenta el siguiente error al intentar ejecutar telegram-cli:
 
