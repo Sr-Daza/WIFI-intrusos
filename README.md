@@ -1,4 +1,4 @@
-# Script-python-Intrusos-en-RED-wifi/ethernet-v0.2
+# Intrusos-en-RED-wifi/ethernet-v0.2
 Nueva version de esta herramienta, es la que actualmente uso
 
 
