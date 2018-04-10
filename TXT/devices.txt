@@ -1,0 +1,1 @@
+﻿Borar y copiar la salida de nmap
