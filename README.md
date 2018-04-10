@@ -105,7 +105,7 @@ pegar la siguiente linea al final del archivo (modifica la ruta)
 
 Solo poner atención a las rutas pues el script, el crontab y Telegram-cli buscan los archivos en esas rutas
 
-Con esto en los archivos cron se logra un escaneo de red cada 10 min , lo cual se puede midicar segun sus necesidades
+Con esto en los archivos cron se logra un escaneo de red cada 10 min , lo cual se puede modicar segun sus necesidades
 
 
 
