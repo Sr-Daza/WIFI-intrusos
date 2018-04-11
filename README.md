@@ -60,11 +60,11 @@ Uso:
 
 LINEA 18 
 
-ruta="/poner/ruta/a/folder/TXT"
+```ruta="/poner/ruta/a/folder/TXT"```
 
 LINEA 19
 
-rutat="/ruta/Donde/instalas/o/ejecutas/telegram-cli/tg/bin"
+```rutat="/ruta/Donde/instalas/o/ejecutas/telegram-cli/tg/bin"```
 
 Cambiar USER en lineas 94 y 96, por el alias de un contacto que ya tengas de TELEGRAM al que le llagaran las alertas (puedes ser tu mismo)
 
