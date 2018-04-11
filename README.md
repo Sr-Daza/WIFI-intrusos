@@ -79,7 +79,9 @@ Cambiar USER en lineas 94 y 96, por el alias de un contacto que ya tengas de TEL
 4.- Editar el cron del root con el siguiente comando (yo uso nano como editor):
 
 
-`sudo crontab -e`
+```shell 
+sudo crontab -e
+```
 
 
 y pegar la siguiente linea al final(modifica la ruta):
