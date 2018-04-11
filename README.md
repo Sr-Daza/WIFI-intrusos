@@ -57,13 +57,17 @@ Se trata de escanear tu red en busca de los numeros MAC de los dispositivos cone
 
 2.- En el archivo intrusosWIFI.py cambiar 
 
+``` shell
 *LINEA 18* 
 
-```ruta="/poner/ruta/a/folder/TXT"```
+
+ruta="/poner/ruta/a/folder/TXT"
+
 
 *LINEA 19*
 
-```rutat="/ruta/Donde/instalas/o/ejecutas/telegram-cli/tg/bin"```
+rutat="/ruta/Donde/instalas/o/ejecutas/telegram-cli/tg/bin"
+```
 
 Cambiar USER en lineas 94 y 96, por el alias de un contacto que ya tengas de TELEGRAM al que le llagaran las alertas (puedes ser tu mismo)
 
@@ -72,7 +76,9 @@ Cambiar USER en lineas 94 y 96, por el alias de un contacto que ya tengas de TEL
 3.- Poner MACs de dispositivos conocidos en el archivo devices.txt copiando y pegando la salida del siguiente comando mientras tus dispositivos estan canectados(posteriormente se pueden agragar mas):
 
 
-`sudo nmap -sP ip.de.tu.modem/24 | grep MAC`
+```shell 
+sudo nmap -sP ip.de.tu.modem/24 | grep MAC
+```
 
 
 
@@ -83,25 +89,26 @@ Cambiar USER en lineas 94 y 96, por el alias de un contacto que ya tengas de TEL
 sudo crontab -e
 ```
 
-
 y pegar la siguiente linea al final(modifica la ruta):
 
-`*/10 * * * * nmap -n -sP -PA -PU ip.de.tu.modem/24|grep MAC > /ruta/donde/esta/archivo/TXT/temp.txt 2>&1`
-
+```shell 
+*/10 * * * * nmap -n -sP -PA -PU ip.de.tu.modem/24|grep MAC > /ruta/donde/esta/archivo/TXT/temp.txt 2>&1
+```
 
 *(este es el comando de nmap que me resulto mas util)*
 
 
-
 5.- Editar el cron del usuario con el siguiente comando (puede ser tambien el del root con sudo):
 
-`crontab -e`
-
+```shell 
+crontab -e
+```
 
 pegar la siguiente linea al final del archivo (modifica la ruta)
 
-
-`*/10 * * * * /usr/bin/python /ruta/donde/esta/el/archivo/intrusosWIFI.py > /dev/null 2>&1`
+```shell 
+*/10 * * * * /usr/bin/python /ruta/donde/esta/el/archivo/intrusosWIFI.py > /dev/null 2>&1
+```
 
 
 Solo poner atención a las rutas pues el script, el crontab y Telegram-cli buscan los archivos en esas rutas
