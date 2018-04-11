@@ -73,7 +73,7 @@ Cambiar USER en lineas 94 y 96, por el alias de un contacto que ya tengas de TEL
 3.- Poner MACs de dispositivos conocidos en el archivo devices.txt copiando y pegando la salida del siguiente comando mientras tus dispositivos estan canectados(posteriormente se pueden agragar mas):
 
 
-[sudo nmap -sP ip.de.tu.modem/24 | grep MAC]
+sudo nmap -sP ip.de.tu.modem/24 | grep MAC
 
 
 
@@ -112,7 +112,7 @@ Con esto en los archivos cron se logra un escaneo de red cada 10 min , lo cual s
 NOTAS:
 
 
-* Instalacion y uso de TELEGRAM-CLI >>> [(https://github.com/vysheng/tg)]
+* Instalacion y uso de TELEGRAM-CLI >>> [Pagina de Telegram-cli](https://github.com/vysheng/tg)
 
 
 
