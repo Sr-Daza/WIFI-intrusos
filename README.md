@@ -21,7 +21,7 @@ Se trata de escanear tu red en busca de los numeros MAC de los dispositivos cone
 
 *python 2.7
 
-## Modulos python:
+## y los modulos python:
 
 *import sys
 
@@ -37,7 +37,7 @@ Se trata de escanear tu red en busca de los numeros MAC de los dispositivos cone
 
 *import logging
 
-*import logging.handlers
+__________________________________
 
 *Instalar Telegram-cli (linux) y verificar que funcione.
 
@@ -81,6 +81,9 @@ sudo nmap -sP ip.de.tu.modem/24 | grep MAC
 ```
 
 
+____________________________________________________________________________________________________________________
+**Las siguientes instrucciones son para que se realice el escaneo de la red cada 10 min de forma automatica y avise en caso de intrusos**
+
 
 4.- Editar el cron del root con el siguiente comando (yo uso nano como editor):
 
@@ -95,7 +98,7 @@ y pegar la siguiente linea al final(modifica la ruta):
 */10 * * * * nmap -n -sP -PA -PU ip.de.tu.modem/24|grep MAC > /ruta/donde/esta/archivo/TXT/temp.txt 2>&1
 ```
 
-*(este es el comando de nmap que me resulto mas util)*
+Con lo anterior se escanea la red y la salida se redirige a un archivo temporal ubicado en la ruta que especifiques, la cual debe se la misma donde tengas el archivo devices.txt con tus MAC autorizadas a conectarse (en mi caso uso una carpeta llamada TXT)
 
 
 5.- Editar el cron del usuario con el siguiente comando (puede ser tambien el del root con sudo):
@@ -109,6 +112,8 @@ pegar la siguiente linea al final del archivo (modifica la ruta)
 ```shell 
 */10 * * * * /usr/bin/python /ruta/donde/esta/el/archivo/intrusosWIFI.py > /dev/null 2>&1
 ```
+
+____________________________________________________________________________________________________________________________
 
 
 Solo poner atención a las rutas pues el script, el crontab y Telegram-cli buscan los archivos en esas rutas
